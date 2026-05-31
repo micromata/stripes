@@ -89,7 +89,7 @@ public class CommonsMultipartWrapper implements MultipartWrapper {
             this.charset = request.getCharacterEncoding();
             DiskFileItemFactory factory = DiskFileItemFactory.builder().setPath(tempDir.toPath()).get();
             JakartaServletFileUpload upload = new JakartaServletFileUpload(factory);
-            upload.setSizeMax(maxPostSize);
+            upload.setMaxSize(maxPostSize);
             List<FileItem> items = upload.parseRequest(request);
             Map<String, List<String>> params = new HashMap<String, List<String>>();
 
